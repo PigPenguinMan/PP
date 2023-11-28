@@ -11,16 +11,19 @@
     --text-color : #878D96 ; 
 
     /*  --TRANSISTION-  */
+    --tran-02 : all 0.2s ease ;
     --tran-03 : all 0.3s ease ;
     --tran-04 : all 0.4s ease ; 
     --tran-05 : all 0.5s ease ; 
     --tran-06 : all 0.6s ease ;
+    --tran-10 : all 1.0s ease ; 
 }
 
 
 .notosanskr * { 
  font-family: 'Noto Sans KR', sans-serif;
 }
+
 
 body {
     height: 100vh;
@@ -38,7 +41,34 @@ body.dark {
     --toggle-color : #DDD ;
     --text-color : #DDE1E6 ; 
 }
+
+
+
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+
 /* 버튼 ::hover 배경색 변경 일괄적으로 적용 ?  */
 
 
 
+
+
+/* 데스크탑 */
+@media all and (min-width :1024px ) {
+    
+}
+
+
+/* 태블릿  */
+@media all and (min-width : 768px) and (max-width : 1023px) {
+    
+}
+
+@media all and (max-width : 768px) {
+ section {
+    width: 100vw;
+ }
+}

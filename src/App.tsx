@@ -1,19 +1,22 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/layout";
-import Page1 from "./pages/page1";
+import MainPage from "./pages/mainpage";
 import { ThemeContext } from "./contexts/themecontext";
 import { useState } from "react";
-
+import { LoginContext } from "./contexts/logincontext";
 function App() {
-  const [isDkMd, setIsDkMd] = useState(false);
+  const [isDkMd, setIsDkMd] = useState<Boolean>(false);
+  const [isLogin, setIsLogin] = useState<Boolean>(false);
   return (
     <ThemeContext.Provider value={{ isDkMd, setIsDkMd }}>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route path="/" element={<Page1 />}></Route>
-        </Route>
-      </Routes>
+      <LoginContext.Provider value={{ isLogin, setIsLogin }}>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route path="/" element={<MainPage />}></Route>
+          </Route>
+        </Routes>
+      </LoginContext.Provider>
     </ThemeContext.Provider>
   );
 }

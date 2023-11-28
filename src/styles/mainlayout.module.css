@@ -2,11 +2,24 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 데스크탑 */
+@media all and (min-width :1024px ) {
     
 }
 
-/* @media (min-width: 640px) {
-    .main_layout{
+
+/* 태블릿  */
+@media all and (min-width : 768px) and (max-width : 1023px) {
+    
+}
+
+@media all and (max-width : 768px) {
+    .main_layout {
         flex-direction: column;
     }
-} */
+}
