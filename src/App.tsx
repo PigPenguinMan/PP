@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import MainLayout from "./layouts/layout";
+import Page1 from "./pages/page1";
+import { ThemeContext } from "./contexts/themecontext";
+import { useState } from "react";
 
 function App() {
+  const [isDkMd, setIsDkMd] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeContext.Provider value={{ isDkMd, setIsDkMd }}>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<Page1 />}></Route>
+        </Route>
+      </Routes>
+    </ThemeContext.Provider>
   );
 }
 

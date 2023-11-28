@@ -1,0 +1,12 @@
+.main_layout {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+/* @media (min-width: 640px) {
+    .main_layout{
+        flex-direction: column;
+    }
+} */

@@ -1,0 +1,242 @@
+/* 사이드바 CSS*/
+
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-width: 70px;
+    height: 100vh;
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+    padding: 10px 10px;
+}
+
+.navbar .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 27px;
+    cursor: pointer;
+}
+.navbar .text {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    /* 11/27 transition을 안주면 글자가 뿅하고 나와서 이상하다 */
+    transition: var(--tran-04);
+    
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+
+
+
+.navbar_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 50px;
+}
+
+.navbar_header .header_icon {
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navbar_menubar {
+    display: flex;
+    height: calc(100% - 50px);
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    gap: 10px;
+}
+
+
+.navbar li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    list-style: none;
+}
+
+.navbar li a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    border-radius: 5px;
+    color: inherit;
+    /* 색변하게 tansition 사용 */
+    transition: var(--tran-04);
+}
+
+.navbar li .icon{
+    min-width: 70px
+}
+
+.navbar li .icon,
+.navbar li .text {
+    color: var(--text-color);
+    transition: var(--tran-04);
+}
+
+
+
+/* 메뉴에 호버햇을때  */
+.navbar li a:hover {
+    background-color: var(--primary-color);
+
+}
+
+
+.navbar li:hover .icon,
+.navbar li:hover .text {
+    color: var(--sidebar-color);
+
+}
+
+
+
+
+
+/* 사이드바 아래쪽  */
+
+.navbar_btm {
+    margin-bottom: 50px;
+}
+
+/* .navbar_btm img {
+    width: 25px;
+    height: 25px;
+} */
+
+.darkmode_icon {
+    transform: var(--tran-04);
+}
+
+.darkmode_toggle {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    background-color: var(--primary-color-light);
+    border-radius: 5px;
+}
+
+.darkmode_toggle li:hover .text {
+    color: var(--text-color);
+}
+
+
+.toggle_btnwrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 40px;
+    cursor: pointer;
+    transition: var(--tran-03);
+}
+
+.toggle_btn {
+    position: absolute;
+    height: 25px;
+    width: 50px;
+    border-radius: 20px;
+    background-color: var(--toggle-color);
+}
+
+/* 토글버튼안의 원 */
+.toggle_btn::before {
+    position: absolute;
+    top: 20%;
+    left: 5px;
+    height: 15px;
+    width: 15px;
+    content: '';
+    border-radius: 50%;
+    background-color: var(--primary-color-light);
+    /* 버튼눌렀을때 오른쪽으로 움직이게  left값증가시키기 ? */
+    transition: var(--tran-03);
+}
+
+/* 다크모드일때 사용할 css */
+
+body.dark .toggle_btn::before {
+    left: 30px;
+}
+
+body.dark {}
+
+
+/* 사이드바 크기가 줄었을때 사용할 CSS */
+
+.navbar.close{
+    width: 75px;
+}
+
+.navbar.close .toggle_btnwrap { 
+    position: absolute;
+}
+
+/* 11/27 사이드바를 접을때 .text와 .darkmode_icon이 점점사라지고 펼때 점점나타나게 하기
+*  display:none 과 visibility를 사용하려했는데 갑자기 뿅 나타나 이상하다 
+* keyframe 사용하기 ? 
+* 11/28 지금은 opacity를 0으로 만드는걸로 문제해결 
+*/
+
+/* @keyframes navbar_oc_ani {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+.navbar.close .text,
+.navbar.close .darkmode_icon {
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+/* @media (min-width: 640px) {} */
