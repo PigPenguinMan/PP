@@ -9,6 +9,8 @@
     --primary-color-light : #F6F5FF ;
     --toggle-color : #DDD ;
     --text-color : #878D96 ; 
+    --section-bgcolor : #fff;
+
 
     /*  --TRANSISTION-  */
     --tran-02 : all 0.2s ease ;
@@ -45,8 +47,20 @@ body.dark {
 
 
 section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100vh;
+}
+
+section > div {
+    position: relative;
+    width: 98%;
+    height: 100%;
+    background: var(--section-bgcolor);
+    border-radius: 5px;
+
 }
 
 

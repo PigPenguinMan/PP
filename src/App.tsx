@@ -5,6 +5,9 @@ import MainPage from "./pages/mainpage";
 import { ThemeContext } from "./contexts/themecontext";
 import { useState } from "react";
 import { LoginContext } from "./contexts/logincontext";
+import SignInPage from "./pages/account/signinpage";
+import SignUpPage from "./pages/account/signuppage";
+import DashBoardPage from "./pages/dashboardpage";
 function App() {
   const [isDkMd, setIsDkMd] = useState<Boolean>(false);
   const [isLogin, setIsLogin] = useState<Boolean>(false);
@@ -13,7 +16,10 @@ function App() {
       <LoginContext.Provider value={{ isLogin, setIsLogin }}>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route path="/" element={<MainPage />}></Route>
+            <Route path="/" element={<MainPage />}/>
+            <Route path="/dashboard" element={<DashBoardPage/>} />
+            <Route path="/account/signin" element={<SignInPage/>} />
+            <Route path="/account/signup" element={<SignUpPage/>} />
           </Route>
         </Routes>
       </LoginContext.Provider>

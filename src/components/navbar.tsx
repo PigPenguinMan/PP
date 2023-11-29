@@ -31,9 +31,10 @@ const Navbar = () => {
    * 메뉴버튼을 누르면 상단에서 메뉴가 커튼처럼 내려오게 하기
    *
    */
-  // 모바일크기 메뉴버튼
-  const menuBar = useRef<HTMLDivElement | null >(null)
 
+
+  const menuBar = useRef<HTMLDivElement | null >(null)
+  // 모바일크기 메뉴버튼
   const menuBtn = useRef<HTMLElement | null>(null);
   const handleMnBtn = (
     e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>
@@ -49,12 +50,12 @@ const Navbar = () => {
     <nav className="navbar" ref={navbar}>
       <header className="navbar_header">
         <span className="navbar_header_logo">
-          <i className="icon ">
+          <i className="icon">
             <img className="logo" src={logo} />
           </i>
         </span>
         <div>
-          <span className="logo_name text"> 웹 이름</span>
+          <span className="logo_name text">PP</span>
         </div>
         <i className="header_icon" onClick={handleOCBtn} ref={ocBtn}>
           {isSideBarOpen ? (

@@ -61,7 +61,7 @@
 .header_icon {
     position: absolute;
     top: 50%;
-    right: -15px;
+    right: -13px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -284,9 +284,11 @@ body.dark {}
     }
 
     .navbar .navbar_menubar {
+        width: 100vw;
         height: 100vh;
         transition: var(--tran-10);
         visibility: hidden;
+        background-color:gray;
     
     }
 
@@ -302,6 +304,7 @@ body.dark {}
         animation-name: m_menubar_ani;
         animation-duration: 1s;
         animation-direction: alternate;
+        animation-timing-function: ease;
         visibility: visible;
     }
 }

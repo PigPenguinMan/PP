@@ -3,13 +3,19 @@ import x from "../../styles/icons/x.svg";
 import discord from "../../styles/icons/discord.svg";
 import github from "../../styles/icons/github.svg";
 import loginIcon from "../../styles/icons/login.svg";
+import dashboard from "../../styles/icons/dashboard.svg";
+import house from "../../styles/icons/house.svg";
 import sun from "../../styles/icons/sun.svg";
 import moon from "../../styles/icons/moon.svg";
 import { useContext, useRef } from "react";
 import { ThemeContext } from "../../contexts/themecontext";
 import { MenuBarProps } from "../../types/navbar";
 
-const MenuBar = ({menubar,isMenuBarOpen,setIsMenuBarOpen}: MenuBarProps) => {
+const MenuBar = ({
+  menubar,
+  isMenuBarOpen,
+  setIsMenuBarOpen,
+}: MenuBarProps) => {
   const { isDkMd, setIsDkMd } = useContext(ThemeContext);
   //  다크모드 버튼
   const handleDarkMdBtn = (
@@ -30,19 +36,19 @@ const MenuBar = ({menubar,isMenuBarOpen,setIsMenuBarOpen}: MenuBarProps) => {
       <div className="menu">
         <ul className="menu_links">
           <li className="menu_link">
-            <a href="">
+            <a href="/">
               <i className="icon">
-                <img src={instgram} alt="인스타그램 아이콘" />
+                <img src={house} alt="메인 아이콘" />
               </i>
-              <span className="text">인스타그램</span>
+              <span className="text">메인</span>
             </a>
           </li>
           <li className="menu_link">
-            <a href="">
+            <a href="/dashboard">
               <i className="icon">
-                <img src={x} alt="트위터 아이콘" />
+                <img src={dashboard} alt="대시보드 아이콘" />
               </i>
-              <span className="text">트위터</span>
+              <span className="text">대시보드</span>
             </a>
           </li>
           <li className="menu_link">
@@ -65,7 +71,7 @@ const MenuBar = ({menubar,isMenuBarOpen,setIsMenuBarOpen}: MenuBarProps) => {
       </div>
       <div className="navbar_btm">
         <li className="login&outbtn">
-          <a href="">
+          <a href="/account/signin">
             {/* <img className="icon" src={logout} alt="로그인 아이콘" />
               <span className="text">로그아웃</span> */}
             <i className="icon">
