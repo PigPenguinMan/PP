@@ -2,6 +2,7 @@ import instgram from "../../styles/icons/instagram.svg";
 import x from "../../styles/icons/x.svg";
 import discord from "../../styles/icons/discord.svg";
 import github from "../../styles/icons/github.svg";
+import book from "../../styles/icons/book.svg"
 import loginIcon from "../../styles/icons/login.svg";
 import dashboard from "../../styles/icons/dashboard.svg";
 import house from "../../styles/icons/house.svg";
@@ -54,9 +55,9 @@ const MenuBar = ({
           <li className="menu_link">
             <a href="">
               <i className="icon">
-                <img src={discord} alt="디스코드 아이콘" />
+                <img src={book} alt="블로그 아이콘" />
               </i>
-              <span className="text">디스코드</span>
+              <span className="text">블로그</span>
             </a>
           </li>
           <li className="menu_link">
