@@ -2,13 +2,15 @@
  * grid 1x1 박스
  */
 
-const Dashboard_Box_sm = () => {
+import { IDashboardBoxProps } from "../../types/dashboard";
+
+const DashboardSmBox = (props : IDashboardBoxProps) => {
     return ( 
-        <div className="dashboard_box">
+        <div className={`${props.class}`}>
             
             
         </div>
      );
 }
  
-export default Dashboard_Box_sm;
+export default DashboardSmBox;

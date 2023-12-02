@@ -1,7 +1,7 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 :root {
-    /* 프로젝트 전체에서 사용할 색 변수로 설정 */
+    /* 프로젝트 전체에서 사용할 색 변수로 설정  다른색으로 바뀔 예정 */ 
     /*  --COLOR--  */
     --body-color : #F2F4F8 ; 
     --sidebar-color : #fff ;
@@ -60,7 +60,7 @@ section > div {
     height: 98%;
     background: var(--section-bgcolor);
     border-radius: 5px;
-
+    overflow-y: scroll;
 }
 
 

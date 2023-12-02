@@ -1,2 +1,14 @@
-.pagewrap {
+.main_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.main_wrap > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 300px;
+    border-bottom: 1px solid black;
+}   

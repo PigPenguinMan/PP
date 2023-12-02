@@ -32,14 +32,14 @@
     border-radius: 5px;
 }
 
-.midbox {
+.mdbox {
     grid-column: 1/4;
     grid-row: 2/4;
     border: 1px solid black;
     border-radius: 5px;
 }
 
-.botbox {
+.lgbox {
     grid-column: 1/4 ;
     grid-row: 4/7;
     border: 1px solid black;

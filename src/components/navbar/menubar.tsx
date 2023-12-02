@@ -53,7 +53,7 @@ const MenuBar = ({
             </a>
           </li>
           <li className="menu_link">
-            <a href="">
+            <a href="/blog">
               <i className="icon">
                 <img src={book} alt="블로그 아이콘" />
               </i>

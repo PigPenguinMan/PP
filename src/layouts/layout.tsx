@@ -6,11 +6,9 @@ const MainLayout = () => {
   return (
     <main className={styles.main_layout}>
       <Navbar />
-        <section>
-
+      <section>
         <Outlet />
-        </section>
-
+      </section>
     </main>
   );
 };

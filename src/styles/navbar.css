@@ -7,10 +7,9 @@
     flex-direction: column;
     width: 200px;
     min-width: 70px;
-    height: 100vh;
+    height: 98%;
     background-color: var(--sidebar-color);
     transition: var(--tran-04);
-    padding: 10px 10px;
     border-radius: 0 5px 5px 0;
 }
 

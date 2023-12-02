@@ -8,6 +8,7 @@ import { LoginContext } from "./contexts/logincontext";
 import SignInPage from "./pages/account/signinpage";
 import SignUpPage from "./pages/account/signuppage";
 import DashBoardPage from "./pages/dashboardpage";
+import BlogPage from "./pages/blogpage";
 function App() {
   const [isDkMd, setIsDkMd] = useState<Boolean>(false);
   const [isLogin, setIsLogin] = useState<Boolean>(false);
@@ -20,6 +21,7 @@ function App() {
             <Route path="/dashboard" element={<DashBoardPage/>} />
             <Route path="/account/signin" element={<SignInPage/>} />
             <Route path="/account/signup" element={<SignUpPage/>} />
+            <Route path="/blog" element={<BlogPage/>}/>
           </Route>
         </Routes>
       </LoginContext.Provider>
