@@ -12,18 +12,18 @@ const BlogPage = () => {
    */
   const [blogData, setBlogData] = useState([]);
   const fetchBlogData = () => {
-    const response = NotionAPI().then((result) => console.log(result.results));
+    const response = NotionAPI({'requestType':'Query'}).then((result) => console.log(result.results));
     return response;
   };
 
   /**
    * 12/03 카드클릭시 해당 카드의 id값의 페이지 불러오기 ? 아니면 처음부터 페이지를 다불러오기 ?
    */
-  const handleCardClick =()=>{
-
+  const handleCardClick =(e:React.MouseEvent<HTMLElement>)=>{
+    e.preventDefault();
   }
   useEffect(() => {
-    fetchBlogData()
+    // fetchBlogData()
   }, []);
 
   /**
