@@ -23,7 +23,7 @@
 .navbar .icon img {
     width: 25px;
     height: 27px;
-    cursor: pointer;
+
 }
 
 .navbar .text {
@@ -100,9 +100,10 @@
     width: 100%;
     height: 50px;
     list-style: none;
+    cursor: pointer;
 }
 
-.navbar li a {
+.navbar li>div {
     display: flex;
     width: 100%;
     height: 100%;
@@ -110,9 +111,8 @@
     text-decoration: none;
     gap: 10px;
     border-radius: 5px;
-    color: inherit;
     /* 색변하게 tansition 사용 */
-    transition: var(--tran-04);
+    transition: var(--tran-03);
 }
 
 .navbar li .icon {
@@ -122,13 +122,13 @@
 .navbar li .icon,
 .navbar li .text {
     color: var(--text-color);
-    transition: var(--tran-04);
+    transition: var(--tran-03);
 }
 
 
 
 /* 메뉴에 호버햇을때  */
-.navbar li a:hover {
+.navbar li > .menu_link:hover {
     background-color: var(--primary-color);
 }
 
@@ -145,7 +145,7 @@
 }
 
 .darkmode_icon {
-    transform: var(--tran-04);
+    transform: var(--tran-03);
 }
 
 .darkmode_toggle {
@@ -157,6 +157,9 @@
     border-radius: 5px;
 }
 
+.darkmode_toggle > div:hover {
+    background-color: var(--primary-color-light);
+}
 .darkmode_toggle li:hover .text {
     color: var(--text-color);
 }
@@ -166,7 +169,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     right: 30%;
     height: 100%;
     min-width: 40px;
@@ -180,6 +182,7 @@
     width: 50px;
     border-radius: 20px;
     background-color: var(--toggle-color);
+    transition: var(--tran-04);
 }
 
 /* 토글버튼안의 원 */
@@ -217,7 +220,8 @@ body.dark {}
 }
 
 .navbar.close .toggle_btnwrap {
-    right: 16px;
+    right: 2.5px;
+    transition: var(--tran-03);
 }
 
 /* 11/27 사이드바를 접을때 .text와 .darkmode_icon이 점점사라지고 펼때 점점나타나게 하기
@@ -236,7 +240,7 @@ body.dark {}
 } */
 .navbar.close .text,
 .navbar.close .darkmode_icon {
-    transition: var(--tran-04);
+    transition: var(--tran-03);
     opacity: 0;
 }
 

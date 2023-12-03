@@ -13,6 +13,7 @@ const Navbar = () => {
   // 클릭했을때 width넓어지게
   const [isSideBarOpen , setIsSideBarOpen] = useState<boolean>(true);
   const [isMenuBarOpen , setIsMenuBarOpen ] = useState<boolean>(false);
+  const [crrPage , setCrrPage] = useState('메인');
   const { isDkMd, setIsDkMd } = useContext(ThemeContext);
 
 
@@ -44,6 +45,7 @@ const Navbar = () => {
   };
 
   
+  
 
   /** 11/25 다크모드일때 사용할 이미지 따로 구하기 | 이미지 바꾸기 */
   return (
@@ -73,7 +75,7 @@ const Navbar = () => {
           <img src={menu} alt="메뉴 아이콘" />
         </i>
       </header>
-        <MenuBar menubar={menuBar} isMenuBarOpen={isMenuBarOpen} setIsMenuBarOpen={setIsMenuBarOpen}/>
+        <MenuBar menubar={menuBar} crrPage={crrPage} setCrrPage={setCrrPage} isMenuBarOpen={isMenuBarOpen} setIsMenuBarOpen={setIsMenuBarOpen}/>
     </nav>
   );
 };

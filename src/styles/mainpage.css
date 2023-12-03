@@ -12,3 +12,6 @@
     min-height: 300px;
     border-bottom: 1px solid black;
 }   
+
+
+@media all and (max-width : 768px) {}

@@ -23,5 +23,6 @@
 @media all and (max-width : 768px) {
     .main_layout {
         flex-direction: column;
+        justify-content:stretch;
     }
 }
