@@ -1,6 +1,7 @@
-import { IDashboardBoxProps } from "../../types/dashboard";
+import { IDashboardChatBoxProps } from "../../types/dashboard";
 
-const DashBoardChatBox = (props:IDashboardBoxProps) => {
+
+const DashBoardChatBox = (props:IDashboardChatBoxProps) => {
     return ( 
         <div className={`${props.class}`}></div>
      );

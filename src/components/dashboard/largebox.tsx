@@ -1,6 +1,7 @@
-import { IDashboardBoxProps } from "../../types/dashboard";
+import { IDashboardLgBoxProps } from "../../types/dashboard";
 
-const DashBoardLgBox = (props:IDashboardBoxProps) => {
+
+const DashBoardLgBox = (props:IDashboardLgBoxProps) => {
     return ( 
         <div className={`${props.class}`}></div>
      );

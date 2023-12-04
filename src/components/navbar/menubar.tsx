@@ -106,35 +106,3 @@ const MenuBar = ({
 };
 
 export default MenuBar;
- {/* <li className="menu_link">
-            <a href="/">
-              <i className="icon">
-                <img src={house} alt="메인 아이콘" />
-              </i>
-              <span className="text">메인</span>
-            </a>
-          </li>
-          <li className="menu_link">
-            <a href="/dashboard">
-              <i className="icon">
-                <img src={dashboard} alt="대시보드 아이콘" />
-              </i>
-              <span className="text">대시보드</span>
-            </a>
-          </li>
-          <li className="menu_link">
-            <a href="/blog">
-              <i className="icon">
-                <img src={book} alt="블로그 아이콘" />
-              </i>
-              <span className="text">블로그</span>
-            </a>
-          </li>
-          <li className="menu_link">
-            <a href="">
-              <i className="icon">
-                <img src={github} alt="깃허브 아이콘" />
-              </i>
-              <span className="text">깃허브</span>
-            </a>
-          </li> */}

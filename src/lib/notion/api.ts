@@ -61,7 +61,7 @@ export const NotionAPI = async ({
             },
           }
         );
-        return response.data;
+        return response.data.results;
       } catch (err) {
         console.error("Notion API QueryDb Err", err);
       }

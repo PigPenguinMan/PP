@@ -2,13 +2,13 @@
  * grid 1x1 박스
  */
 
-import { IDashboardBoxProps } from "../../types/dashboard";
+import { IDashboardSmBoxProps } from "../../types/dashboard";
 
-const DashboardSmBox = (props : IDashboardBoxProps) => {
+const DashboardSmBox = (props: IDashboardSmBoxProps) => {
     return ( 
         <div className={`${props.class}`}>
             
-            
+
         </div>
      );
 }

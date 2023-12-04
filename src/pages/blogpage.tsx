@@ -1,7 +1,8 @@
 import "../styles/blogpage.css";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { NotionAPI } from "../lib/notion/api";
 import BlogCard from "../components/blog/card";
+import LoadingPage from "./loading";
 
 const BlogPage = () => {
   /**
@@ -12,7 +13,7 @@ const BlogPage = () => {
    */
   const [blogData, setBlogData] = useState([]);
   const fetchBlogData = () => {
-    const response = NotionAPI({'requestType':'Query'}).then((result) => console.log(result.results));
+    const response = NotionAPI({requestType:'Query'}).then((result) => setBlogData(result));
     return response;
   };
 
@@ -25,7 +26,6 @@ const BlogPage = () => {
   useEffect(() => {
     // fetchBlogData()
   }, []);
-
   /**
    * 12/02 블로그 글이 카드형식으로 이미지 제목 순으로 나오고 제일 밑에 날짜 표시
    * 카드를 눌렀을 때 해당 내용을 섹션의 오른쪽에서 섹션의 중간까지 나오게 하기 or 모달로 띄우기
@@ -38,13 +38,11 @@ const BlogPage = () => {
     <div className="blog_wrap">
       <h1 className="blog_title">블로그</h1>
       <div className="blog_contents">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+            {/* 12/03 Suspense로 데이터 로딩처리 */}
+            <Suspense fallback={<LoadingPage/>}>
+                
+            </Suspense>
+        
       </div>
     </div>
   );
