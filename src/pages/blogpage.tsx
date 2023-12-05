@@ -1,9 +1,11 @@
 import "../styles/blogpage.css";
-import { Suspense, useEffect, useState } from "react";
-import { NotionAPI } from "../lib/notion/api";
+import React, { Suspense, useEffect, useState } from "react";
+import { NotionDbQuery } from "../lib/notion/api";
 import BlogCard from "../components/blog/card";
 import LoadingPage from "./loading";
-
+import { useQuery } from "react-query";
+import testData from "../util/testdate.json"
+import BlogCardContent from "../components/blog/cardcontent";
 const BlogPage = () => {
   /**
    * 12/03 불러오는 data property https://developers.notion.com/reference/property-object
@@ -12,20 +14,19 @@ const BlogPage = () => {
    * 
    */
   const [blogData, setBlogData] = useState([]);
-  const fetchBlogData = () => {
-    const response = NotionAPI({requestType:'Query'}).then((result) => setBlogData(result));
-    return response;
-  };
+
+  /**
+   * 12/04 Notion Date 타입 지정필요 , react-query로 변경
+   */
+  // const { data, isLoading } = useQuery("NotionData", NotionDbQuery);
 
   /**
    * 12/03 카드클릭시 해당 카드의 id값의 페이지 불러오기 ? 아니면 처음부터 페이지를 다불러오기 ?
    */
-  const handleCardClick =(e:React.MouseEvent<HTMLElement>)=>{
-    e.preventDefault();
+  const handleCardClick = (e:React.MouseEvent<HTMLElement>) =>{
+    console.log(e);
+     
   }
-  useEffect(() => {
-    // fetchBlogData()
-  }, []);
   /**
    * 12/02 블로그 글이 카드형식으로 이미지 제목 순으로 나오고 제일 밑에 날짜 표시
    * 카드를 눌렀을 때 해당 내용을 섹션의 오른쪽에서 섹션의 중간까지 나오게 하기 or 모달로 띄우기
@@ -34,16 +35,20 @@ const BlogPage = () => {
    * 페이지네이션 6개씩 ? | 스크롤시 다음 페이지불러오기 
    *
    */
+  
   return (
-    <div className="blog_wrap">
+    <div className="blog_wrap" >
       <h1 className="blog_title">블로그</h1>
       <div className="blog_contents">
             {/* 12/03 Suspense로 데이터 로딩처리 */}
             <Suspense fallback={<LoadingPage/>}>
-                
+              {testData ? testData.results.map(item=>(
+                <BlogCard key={item.id} {...item} onClick={handleCardClick}  />
+              ))  :  <div> empty</div> }
             </Suspense>
-        
       </div>
+      <BlogCardContent/>
+
     </div>
   );
 };

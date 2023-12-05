@@ -9,8 +9,9 @@
     --primary-color-light : #F6F5FF ;
     --toggle-color : #DDD ;
     --text-color : #878D96 ; 
+    --text-color-light : #C6C6C6 ;
+    --text-color-dark : #525252 ;
     --section-bgcolor : #fff;
-
 
     /*  --TRANSISTION-  */
     --tran-02 : all 0.2s ease ;
@@ -24,11 +25,12 @@
 
 .notosanskr * { 
  font-family: 'Noto Sans KR', sans-serif;
+ 
 }
 
 
 body {
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--body-color);
     font-family: 'Noto Sans KR', sans-serif;
     transition: var(--tran-03);
@@ -51,7 +53,7 @@ section {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 }
 
 section > div {
@@ -87,6 +89,6 @@ section > div {
 
 @media all and (max-width : 768px) {
  section {
-    width: 100vw;
+    width: 100dvw;
  }
 }

@@ -3,10 +3,6 @@ import { IGithubCommitResponse } from "./github";
 /**
  * 12/04 대시보드에서 사용할 데이터들의 타입
  */
-type TSmBoxContent = {
-    date1Arr : IGithubCommitResponse[] ;
-    date2Arr : IGithubCommitResponse[]; 
-}
 
 
 export interface IDashboardSmBoxProps{

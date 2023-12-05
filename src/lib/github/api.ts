@@ -1,6 +1,4 @@
 import { Octokit } from "octokit";
-
-import { useQuery } from "react-query";
 import { IGithubCommitResponse } from "../../types/github";
 
 /**

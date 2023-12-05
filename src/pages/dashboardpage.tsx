@@ -20,6 +20,7 @@ const DashBoardPage = () => {
    */
   const { data, isLoading } = useQuery("GitData", GithubGetCommits);
   
+  /* ---------- */
   /** 12/04 불러온 data에서 날짜만 뽑아내기 
    * smbox에 들어갈 비교오소들이 여러가지 사용하기에 함수화 시켜 사용하기 
   */
@@ -37,7 +38,7 @@ const DashBoardPage = () => {
   const date2 = new Date(today.setDate(today.getDate() - 2))
     .toISOString()
     .slice(0, 10);
-    
+
   if (data != undefined) {
     data.forEach((item) => {
       let commitDate = item.commit?.author?.date?.slice(0, 10);
