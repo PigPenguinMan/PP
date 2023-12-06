@@ -18,7 +18,7 @@ const DashBoardPage = () => {
    * 12/04 react-query 사용을 위한 data 추가
    * ref https://tanstack.com/query/v3/docs/react/reference/useQuery
    */
-  const { data, isLoading } = useQuery("GitData", GithubGetCommits);
+  // const { data, isLoading } = useQuery("GitData", GithubGetCommits);
   
   /* ---------- */
   /** 12/04 불러온 data에서 날짜만 뽑아내기 
@@ -39,16 +39,16 @@ const DashBoardPage = () => {
     .toISOString()
     .slice(0, 10);
 
-  if (data != undefined) {
-    data.forEach((item) => {
-      let commitDate = item.commit?.author?.date?.slice(0, 10);
-      if (commitDate == date1){
-        date1Arr.push(item);
-      } else if ( commitDate == date2 ){
-        date2Arr.push(item);
-      }
-    });
-  }
+  // if (data != undefined) {
+  //   data.forEach((item) => {
+  //     let commitDate = item.commit?.author?.date?.slice(0, 10);
+  //     if (commitDate == date1){
+  //       date1Arr.push(item);
+  //     } else if ( commitDate == date2 ){
+  //       date2Arr.push(item);
+  //     }
+  //   });
+  // }
   /* --------- */
   useEffect(() => {
     

@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+## 프로젝트 계획 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### 프로젝트에서 중요하게 시도해볼것 
 
-## Available Scripts
+이전 프로젝트에서는 처음 설계부터 반응형을 고려햐지않아 다 만들고보니 반응형으로 만드려면 다시만들어야하는 수준이였다 .
 
-In the project directory, you can run:
+그래서 이번엔 처음부터 반응형을 고려해서 레이아웃을 설계 .
 
-### `npm start`
+디자인도 figma로 만드는걸 시도해보려고 한다 .
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+SEO에 유리하게 시맨틱태그 제대로 사용
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### 주제 
 
-### `npm test`
+인스타그램, 페이스북,트위터같은 sns의 피드중 내가 보고싶은 주제만 볼수있는 웹 ? 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+주제 정하기가 어렵다 .. 
 
-### `npm run build`
+그냥 내 소개하는 페이지 개인블로그? 는 어떨까 블로그를 만드려면 DB가 필수일거같은데 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 만들어야할 기능 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Navbar  
+    - 위치 
+        - 데스크탑 , 태블릿
+            + 화면의 좌측 
+        - 모바일 
+            + 화면의 최상단
+    - 기능 ? 
+        -  데스크탑 , 태블릿 
+            + 초기에는 최상단에 유저 아이콘 또는 로고 , 각 메뉴의 아이콘 , 로그인&로그아웃 버튼, 최하단의 다크모드 토글버튼  있는거도 괜찮을거같음 
+            + Navbar를 클릭했을때 Navbar가 우측으로 넓어지고 메뉴리스트를 글로 표시 
+        - 모바일 
+            + 초기에는 좌측 로고 , 우측 메뉴버튼아이콘 , 메뉴버튼좌측에 검색버튼?
+            + 메뉴버튼을 눌렀을때 아래로 넓어지고 메뉴리스트 표시
+            + 검색버튼이 있다면 눌렀을때 메뉴버튼을 누른거처럼 넓어지고 검색창나오게 ? 
+        - 다크모드 
+            + toggle로 class를 추가해 css변경 , useContext사용? | document.body사용
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - 메뉴 종류 
+        - 인스타그램 피드 
+        - 트위터 피드 
+        - ++ 추가 필요 (4개정도 있어야할거같음)
+2. 로그인  
+    1)  DB를 사용할지는 고민필요 
+    2)  contextAPI을 이용해 전역상태값으로 관리
+3. 홈
+    - 들어왔을때 가장 먼저 보게될 인덱스페이지 
+    - 내 소개 , 이 프로젝트에 대한 소개 , 프로젝트 계획 등 소개하는 페이지 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. 대시보드
+    - 프로젝트의 여러가지 수치들을 시각화해 보여주는 페이지 
+        - 상단 박스
+            1) 커밋횟수 
+                + 접속한 날짜를 기준으로 이틀전과 하루전의 커밋횟수를 비교
+            2) 블로그 업로드 횟수 
+                + 접속한 날짜에 블로그를 업로드한 횟수 ? 
+            3) 비교할 데이터 추가 필요 
+            
+        - 중단 박스
+            + 그래프 형태로 블로그,깃허브의 데이터들을 표시 ?
+        - 하단 박스
+            + 어떤 데이터 추가 필요  
+        - 우측 박스 
+5. 블로그  
+    - NotionAPI로 Notion에서 불러온 데이터 CRUD
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6. 깃허브 
+    - 어떻게 표시할지 추가 필요 
+#### 추가한 라이브러리 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. React-Router-dom 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. typescript 
 
-## Learn More
+3. axios
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. octokit 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. react-query

@@ -1,7 +1,7 @@
 import { Client } from "@notionhq/client";
 import axios from "axios";
 import { INotionAPIRequest } from "../../types/notion";
-
+import testData from '../../util/testdate.json'
 export const NotionDbQuery = async () => {
   const response = await axios
     .post(
@@ -25,6 +25,13 @@ export const NotionDbQuery = async () => {
     .then((res) => res.data);
   return response;
 };
+
+export const TestNotionDb = async ()=>{
+  const response = testData
+  
+  
+  return response
+}
 
 export const NotionGetPage = async (pageId:string) => {
   const response = await axios

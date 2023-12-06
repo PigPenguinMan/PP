@@ -84,8 +84,11 @@
     right: 0;
     width: 50dvw;
     height: 100dvh;
+    transform: translateX(50dvw);   
     transition: transform 3s ease;
-}   
+    /* 12/06 데스크탑 ,태블릿에선 화면의 반 , 모바일에선 화면 전체 ?  */
+}
+
 
 
 @media all and (max-width : 768px) {

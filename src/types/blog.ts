@@ -1,5 +1,7 @@
 // 12/05 BlogPage에서 사용할 데이터 타입
 
+import { RefObject } from "react";
+
 /**
  * 12/05 CardProps에 사용할 타입
  */
@@ -14,14 +16,13 @@ type TParent = {
 };
 
 type TDateProperty = {
-    id : string ;
-    type : string ;
-    date : {
-        start: string;
-        end? : string | null;
-        timezone?: string | null ;
-    }
- 
+  id: string;
+  type: string;
+  date: {
+    start: string;
+    end?: string | null;
+    timezone?: string | null;
+  };
 };
 
 type TTitleProperty = {
@@ -31,7 +32,7 @@ type TTitleProperty = {
     type: string;
     text: {
       content: string;
-      link: string | null
+      link: string | null;
     };
     annotations: {
       bold: boolean;
@@ -42,7 +43,7 @@ type TTitleProperty = {
       color: string;
     };
     plain_text: string;
-    href: string | null
+    href: string | null;
   }[];
 };
 type TTagProperty = {
@@ -75,5 +76,15 @@ export interface IBlogCardProps {
   properties: TPropertise;
   public_url: string | null;
   url: string;
-  onClick :(event : React.MouseEvent<HTMLElement>) => void 
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+  ref?: RefObject<HTMLElement>;
+}
+
+
+/**
+ * 12/06 카드를 클릭했을때 나오는 페이지 CSS
+ */
+
+export interface IBlogCardContentProps {
+    ref? : RefObject<HTMLDivElement>
 }
