@@ -82,9 +82,29 @@ export interface IBlogCardProps {
 
 
 /**
- * 12/06 카드를 클릭했을때 나오는 페이지 CSS
+ * 12/06 카드를 클릭했을때 나오는 페이지 타입
  */
 
+export type TBlogCardContent ={
+    archived: boolean;
+    cover: string | null;
+    created_by: TPartialUser;
+    created_time: string;
+    icon: string | null;
+    id: string;
+    last_edited_by: TPartialUser;
+    last_edited_time: string;
+    object: string;
+    parent: TParent;
+    properties: TPropertise;
+    public_url: string | null;
+    url: string;
+};
+
 export interface IBlogCardContentProps {
+    page_id? : string ;
+   data? : TBlogCardContent;
     ref? : RefObject<HTMLDivElement>
 }
+
+

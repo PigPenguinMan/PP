@@ -1,7 +1,8 @@
 import { Client } from "@notionhq/client";
 import axios from "axios";
 import { INotionAPIRequest } from "../../types/notion";
-import testData from '../../util/testdate.json'
+import testData from "../../util/testdata.json";
+import testBlock from '../../util/testblockData.json'
 export const NotionDbQuery = async () => {
   const response = await axios
     .post(
@@ -26,17 +27,38 @@ export const NotionDbQuery = async () => {
   return response;
 };
 
-export const TestNotionDb = async ()=>{
+export const TestNotionDb = async () => {
   const response = testData
-  
-  
-  return response
-}
 
-export const NotionGetPage = async (pageId:string) => {
+  return response;
+};
+
+/**
+ * 12/08 페이지컨텐츠에서 해당 페이지의 글쓴이를 불러오는 API
+ */
+export const NotionGetUser = async (userId: string) => {
+  const response = await axios.get(
+    `https://api.notion.com/v1/users/${userId}`,
+    {
+      headers: {
+        "Notion-Version": "2022-06-28",
+        "Content-Type": "application/json",
+      },
+    }
+  ).then((res)=>res.data)
+  return response
+};
+
+
+/**
+ * 12/08 페이지 내용을 불러오려면 blockChildren을 사용해야한다 
+ * ref https://developers.notion.com/reference/get-block-children
+ */
+
+export const NotionGetPage = async (pageId: string) => {
   const response = await axios
     .get(
-      `${process.env.REACT_APP_PROXY_URL}https://api.notion.com/v1/pages/${pageId}`,
+      `${process.env.REACT_APP_PROXY_URL}https://api.notion.com/v1/block/${pageId}/children`,
       {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_NOTION_API_KEY}`,
@@ -48,6 +70,13 @@ export const NotionGetPage = async (pageId:string) => {
     .then((res) => res.data);
   return response;
 };
+
+export const TestNotionBlcok = async ()=>{
+  const response = testBlock
+  // .map(block => block.results.filter(item => item.id === id ))
+  return response
+}
+
 export const NotionAPI = async ({
   requestType,
   requestContent,

@@ -79,17 +79,84 @@
 */
 .blog_innercontent {
     position: fixed;
-    border: 1px solid black;
-    top: 0;
+    top: 1%;
     right: 0;
     width: 50dvw;
-    height: 100dvh;
-    transform: translateX(50dvw);   
+    height: 98dvh;
+    /* transform: translateX(50dvw) translateZ(0);    */
     transition: transform 3s ease;
     /* 12/06 데스크탑 ,태블릿에선 화면의 반 , 모바일에선 화면 전체 ?  */
+    background-color: var(--section-bgcolor);
+    overflow-y: scroll;
+}
+
+.blog_innercontent > .content_wrap {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column; 
+}
+
+.content_wrap > div {
+    display: flex;
+    width: 100%;
+}
+
+.content_wrap > .content_header { 
+    border: 1px solid black;
+    height: 5%;
+
+}
+
+.content_wrap > .content_article { 
+    flex-direction: column;
+    height: 95%;
+    border: 1px solid dimgray;
 }
 
 
+
+.content_article > .titlewrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid black;
+    
+}
+
+.titlewrap > .tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 2px 3px;
+    border-radius: 5px;
+}
+
+
+.titlewrap > .title {
+    
+}
+.titlewrap > .info { 
+    display: flex;
+    gap: 15px;
+}
+
+.info div {
+    display: flex;
+    gap: 3px;
+}
+.info .icon { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info .text {
+    font-size: 15px;
+    color: var(--text-color-light);
+}
 
 @media all and (max-width : 768px) {
     .blog_contents{
