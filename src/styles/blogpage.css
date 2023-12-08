@@ -83,11 +83,17 @@
     right: 0;
     width: 50dvw;
     height: 98dvh;
-    /* transform: translateX(50dvw) translateZ(0);    */
-    transition: transform 3s ease;
+    border-radius: 5px;
+    transform: translateX(0) translateY(0);
+    transition: transform 1s ease;
     /* 12/06 데스크탑 ,태블릿에선 화면의 반 , 모바일에선 화면 전체 ?  */
     background-color: var(--section-bgcolor);
     overflow-y: scroll;
+    border: 1px solid dimgray;
+}
+
+.blog_innercontent.open{
+    transform: translateX(50dvw) translateZ(0);   
 }
 
 .blog_innercontent > .content_wrap {
@@ -122,7 +128,7 @@
     flex-direction: column;
     align-items: center;
     border-bottom: 1px solid black;
-    
+
 }
 
 .titlewrap > .tag {

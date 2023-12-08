@@ -72,8 +72,8 @@ export const NotionGetPage = async (pageId: string) => {
 };
 
 export const TestNotionBlcok = async ()=>{
-  const response = testBlock
-  // .map(block => block.results.filter(item => item.id === id ))
+  const response = testBlock.map(item => item.results)
+
   return response
 }
 

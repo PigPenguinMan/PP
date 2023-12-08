@@ -8,11 +8,15 @@ import BlogCardContent from "../components/blog/cardcontent";
 import { TBlogCardContent } from "../types/blog";
 import testblock from '../util/testblockData.json'
 const BlogPage = () => {
+
   /**
    * 12/03 불러오는 data property https://developers.notion.com/reference/property-object
    * content.properties : {날짜 :{..} , 이름:{..} ,태그:{...}} ,
    * 글 제목 : 이름.title[0].text.content
    */
+
+  const [isCardOpen,setIsCardOpen]= useState<boolean>(false)
+
   /**
    * 12/05 test용 데이터
    * 12/08 useQuery를 여러번사용하는거보다 useQuery를 useQueries 로 바꿔야할거같다 
@@ -45,29 +49,36 @@ const BlogPage = () => {
    */
   const handleCardClick = (e: React.MouseEvent<HTMLElement>) => {
     setCardId(e.currentTarget.id);
-    
-    const changeStyle = ()=>{
-      cardPageRef.current?.removeAttribute("aria-hidden");
-    };
+ 
     const updateData = ()=>{
-      const data = testresult[1].data?.map(item => item)
-      console.log(data);
+      
+      const cData = testresult[1].data
+      console.log(cData);
       
 
       
     };
-    changeStyle();
     updateData();
-
+    setIsCardOpen(!isCardOpen)
     
     console.log('카드 클릭',cardId);
 
 
   };
 
+  useEffect(()=>{
+    if(isCardOpen){
+      cardPageRef.current?.classList.remove('open');
+      cardPageRef.current?.setAttribute('aria-hidden','false')
+    } else {
+      
+      cardPageRef.current?.classList.add('open');
+      cardPageRef.current?.setAttribute('aria-hidden','true')
+    }
+  },[isCardOpen])
+
 
   useEffect(() => {
-    console.log(testresult[1]);
     
   }, [testresult[1].isLoading]);
   /**
@@ -100,7 +111,10 @@ const BlogPage = () => {
           )}
         </Suspense>
       </div>
-            {/* <BlogCardContent page_id={cardId} data={contentData} ref={cardPageRef}/>  */}
+
+      <BlogCardContent page_id={cardId} data={contentData} ref={cardPageRef}/> 
+
+
       
     </div>
   );
