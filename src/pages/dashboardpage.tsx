@@ -4,7 +4,6 @@ import DashBoardChatBox from "../components/dashboard/chatbox";
 import DashBoardLgBox from "../components/dashboard/largebox";
 import DashBoardMdBox from "../components/dashboard/middlebox";
 import DashboardSmBox from "../components/dashboard/smallbox";
-import { useQuery } from "react-query";
 import { GithubGetCommits } from "../lib/github/api";
 import { IGithubCommitResponse } from "../types/github";
 

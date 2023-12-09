@@ -30,9 +30,16 @@ export const NotionDbQuery = async () => {
 export const TestNotionDb = async () => {
   const response = testData
 
-  return response;
+  return response.results;
 };
 
+export const TestNotionGetBlock = async (page_id :string|undefined) => {
+
+  
+  const response = testBlock.find((data) =>(data.results.find((j)=> j.parent.page_id == page_id)));
+
+  return response
+}
 /**
  * 12/08 페이지컨텐츠에서 해당 페이지의 글쓴이를 불러오는 API
  */

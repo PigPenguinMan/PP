@@ -4,19 +4,14 @@ import { ThemeContext } from "./contexts/themecontext";
 import { Suspense, lazy, useState } from "react";
 import { LoginContext } from "./contexts/logincontext";
 import LoadingPage from "./pages/loading";
-import { QueryClient, QueryClientProvider } from "react-query";
-import {ReactQueryDevtools} from 'react-query/devtools'
+
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 /**
- * 12/04 상태관리를 위한 reactq-query 추가 
- * 데이터패치가 끝나고 
+ * 12/04 상태관리를 위한 reactq-query 추가
+ * 데이터패치가 끝나고
  */
-const queryCleint = new QueryClient({
-  defaultOptions:{
-    queries:{
-      suspense:true
-    }
-  }
-});
+
 
 /**
  * 12/03 lazy , suspense 추가
@@ -32,24 +27,22 @@ const App = () => {
   const [isDkMd, setIsDkMd] = useState<Boolean>(false);
   const [isLogin, setIsLogin] = useState<Boolean>(false);
   return (
-    <QueryClientProvider client={queryCleint} >
     <ThemeContext.Provider value={{ isDkMd, setIsDkMd }}>
-      <LoginContext.Provider value={{ isLogin, setIsLogin }}>
-        <Suspense fallback={<LoadingPage />}>
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route path="/" element={<MainPage />} />
-              <Route path="/dashboard" element={<DashBoardPage />} />
-              <Route path="/account/signin" element={<SignInPage />} />
-              <Route path="/account/signup" element={<SignUpPage />} />
-              <Route path="/blog" element={<BlogPage />}></Route>
-            </Route>
-          </Routes>
-<ReactQueryDevtools initialIsOpen={false} />
-        </Suspense>
-      </LoginContext.Provider>
-    </ThemeContext.Provider>
-    </QueryClientProvider>
+        <LoginContext.Provider value={{ isLogin, setIsLogin }}>
+
+            <Routes>
+              <Route path="/" element={<MainLayout />}>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/dashboard" element={<DashBoardPage />} />
+                <Route path="/account/signin" element={<SignInPage />} />
+                <Route path="/account/signup" element={<SignUpPage />} />
+                <Route path="/blog" element={<BlogPage />}></Route>
+              </Route>
+            </Routes>
+            {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+
+        </LoginContext.Provider>
+      </ThemeContext.Provider>
   );
 };
 

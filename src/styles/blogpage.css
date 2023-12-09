@@ -19,7 +19,7 @@
     justify-items: center;
     width: 95%;
     height: 100%;
-    column-gap: 10px;
+    column-gap:30px;
     row-gap: 20px;
 }
 
@@ -85,7 +85,7 @@
     height: 98dvh;
     border-radius: 5px;
     transform: translateX(0) translateY(0);
-    transition: transform 1s ease;
+    transition: transform 1s ease-in-out;
     /* 12/06 데스크탑 ,태블릿에선 화면의 반 , 모바일에선 화면 전체 ?  */
     background-color: var(--section-bgcolor);
     overflow-y: scroll;
@@ -162,6 +162,12 @@
 .info .text {
     font-size: 15px;
     color: var(--text-color-light);
+}
+
+.content_article> .maintextwrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 @media all and (max-width : 768px) {

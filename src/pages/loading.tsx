@@ -1,8 +1,8 @@
 const LoadingPage = () => {
     return ( 
-        <article className="loading">
+        <div className="loading">
             
-        </article>
+        </div>
      );
 }
  
