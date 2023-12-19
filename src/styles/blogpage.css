@@ -64,6 +64,19 @@
     font-weight: 500;
  }
 
+.blog_cardmtsummary {
+    /* 12/18 line-clamp를 사용하기 위한 display:-webkit-box , -webkit-box-orient */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 400;
+}
+
 .blog_carddate {
   position: relative;
   color: var(--text-color-light);
@@ -128,7 +141,7 @@
     flex-direction: column;
     align-items: center;
     border-bottom: 1px solid black;
-
+    padding: 5px 0;
 }
 
 .titlewrap > .tag {
@@ -168,6 +181,25 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 10px 15px;
+}
+
+
+.maintext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+
+.maintext > div {
+    padding: 10px 0;
+}
+
+.maintext .text {
+    font-size: 16px;
+    font-weight: 350;
 }
 
 @media all and (max-width : 768px) {

@@ -6,7 +6,6 @@ import { LoginContext } from "./contexts/logincontext";
 import LoadingPage from "./pages/loading";
 
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 /**
  * 12/04 상태관리를 위한 reactq-query 추가
  * 데이터패치가 끝나고
@@ -29,6 +28,7 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ isDkMd, setIsDkMd }}>
         <LoginContext.Provider value={{ isLogin, setIsLogin }}>
+        <Suspense fallback={<LoadingPage/>}>
 
             <Routes>
               <Route path="/" element={<MainLayout />}>
@@ -40,6 +40,7 @@ const App = () => {
               </Route>
             </Routes>
             {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+        </Suspense>
 
         </LoginContext.Provider>
       </ThemeContext.Provider>

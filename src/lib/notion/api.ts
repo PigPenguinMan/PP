@@ -2,7 +2,8 @@ import { Client } from "@notionhq/client";
 import axios from "axios";
 import { INotionAPIRequest } from "../../types/notion";
 import testData from "../../util/testdata.json";
-import testBlock from '../../util/testblockData.json'
+import testBlock from '../../util/testblockData.json';
+import testText from '../../util/testblocktext.json';
 export const NotionDbQuery = async () => {
   const response = await axios
     .post(
@@ -36,7 +37,8 @@ export const TestNotionDb = async () => {
 export const TestNotionGetBlock = async (page_id :string|undefined) => {
 
   
-  const response = testBlock.find((data) =>(data.results.find((j)=> j.parent.page_id == page_id)));
+  const response  = testBlock.find((data) =>(data.results.find((j)=> j.parent.page_id == page_id)));
+ 
 
   return response
 }
@@ -81,6 +83,16 @@ export const NotionGetPage = async (pageId: string) => {
 export const TestNotionBlcok = async ()=>{
   const response = testBlock.map(item => item.results)
 
+  return response
+}
+
+export const TestText = async ()=>{
+  const response =  testText.results.filter(item => {
+    if (item.type === 'paragraph' && item.paragraph.rich_text.length > 0){
+        const textData = item.paragraph.rich_text[0].text.content
+      return  textData
+    }
+  });
   return response
 }
 

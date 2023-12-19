@@ -1,6 +1,6 @@
 // 12/05 BlogPage에서 사용할 데이터 타입
 
-import { RefObject } from "react";
+import { RefObject, SetStateAction } from "react";
 
 /**
  * 12/05 CardProps에 사용할 타입
@@ -64,22 +64,43 @@ type TPropertise = {
   태그: TTagProperty;
 };
 
+/**
+ * 12/16 파이어스토어에서 받아오는 데이터 타입
+ */
+type TTimeStamp = { 
+  nanoseconds : string ;
+  seconds : string ; 
+}
+
+type TReply = { 
+  Reply_At : TTimeStamp ; 
+  Reply_Content : string ;
+  User_Name : string ; 
+}
+
 export interface IBlogCardProps {
-  archived: boolean;
-  cover: string | null;
-  created_by: TPartialUser;
-  created_time: string;
-  icon: string | null;
-  id: string;
-  last_edited_by: TPartialUser;
-  last_edited_time: string;
-  object: string;
-  parent: TParent;
-  properties: TPropertise;
-  public_url: string | null;
-  url: string;
+  Id : string; 
+  Created_At : TTimeStamp ;
+  Updated_At ? : TTimeStamp ; 
+  Title : string ;
+  MainText: string ;
+  Reply? :TReply[]; 
+  Tag ? : string;
   onClick: (event: React.MouseEvent<HTMLElement>) => void;
+
   ref?: RefObject<HTMLElement>;
+}
+
+export interface IBlogCardContentProps {
+  Id : string; 
+  Created_At : TTimeStamp ;
+  Updated_At ? : TTimeStamp ; 
+  Title : string ;
+  MainText: string ;
+  Reply? :TReply[]; 
+  Tag ? : string;
+  ref?: RefObject<HTMLElement>;
+
 }
 
 /**
@@ -102,11 +123,11 @@ export type TBlogCardContent = {
   url: string;
 };
 
-export interface IBlogCardContentProps {
-  page_id?: string;
-  contentdata?: TBlogCardContent;
-  ref?: RefObject<HTMLDivElement>;
-}
+// export interface IBlogCardContentProps {
+//   page_id?: string;
+//   contentdata?: TBlogCardContent;
+//   ref?: RefObject<HTMLDivElement>;
+// }
 
 // type TObjectType = {
 //   bookmark?: string;

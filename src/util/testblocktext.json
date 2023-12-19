@@ -1,0 +1,469 @@
+{
+    "object": "list",
+    "results": [
+        {
+            "object": "block",
+            "id": "b388db0e-b83c-4db0-9785-aaefe8f1179e",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:03:00.000Z",
+            "last_edited_time": "2023-12-08T07:03:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "2d2e3d1c-6e82-4953-a31b-b9766ef76b26",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:03:00.000Z",
+            "last_edited_time": "2023-12-08T07:03:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "02355ddd-3e53-4fa2-8ee1-a48deb50b7ff",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:03:00.000Z",
+            "last_edited_time": "2023-12-08T07:04:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "그냥 막막하다 .. ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "그냥 막막하다 .. ",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "e5a396bc-6efd-4534-a250-0af2c795e583",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:04:00.000Z",
+            "last_edited_time": "2023-12-08T07:04:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "c68121bb-e799-43d7-9552-153c9bc1b2c5",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:04:00.000Z",
+            "last_edited_time": "2023-12-08T07:04:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "블로그 탭의 데이터를 불렀을때 받은 데이터로 그냥 전부 표시할수있을줄 알았는데 ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "블로그 탭의 데이터를 불렀을때 받은 데이터로 그냥 전부 표시할수있을줄 알았는데 ",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "0bf94b7b-7a9b-4e3b-b714-472778e06c07",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:04:00.000Z",
+            "last_edited_time": "2023-12-08T07:04:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "80a27f69-7fe3-4828-8eba-81c4718d6f0e",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:04:00.000Z",
+            "last_edited_time": "2023-12-08T07:06:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "페이지를 불러오고 거기서 해당 pageid 의 block/pageId/children 로 내용을 다시 불러와야한다 ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "페이지를 불러오고 거기서 해당 pageid 의 block/pageId/children 로 내용을 다시 불러와야한다 ",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "cb071cfd-d0d5-4ddc-becf-72bb2f466175",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:06:00.000Z",
+            "last_edited_time": "2023-12-08T07:06:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "14125c9a-8627-44d3-be4a-007e016a52ba",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:06:00.000Z",
+            "last_edited_time": "2023-12-08T07:07:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "이걸 클릭했을때 상위컴포넌트에서 불러올까 ? 아니면 하위컴포넌트에서 패치받고 표시 해야할까 ? ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "이걸 클릭했을때 상위컴포넌트에서 불러올까 ? 아니면 하위컴포넌트에서 패치받고 표시 해야할까 ? ",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "a8a48bec-0f33-4bcf-9119-752e4875de4b",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:07:00.000Z",
+            "last_edited_time": "2023-12-08T07:07:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "820aa613-f9c6-433b-86b1-e98666b7324d",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:07:00.000Z",
+            "last_edited_time": "2023-12-08T07:07:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "DB를 안쓰려고 노션 api를 사용하기 시작햇는데 오히려 일이 뭔가 더 많아진 느낌이다 … ",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "DB를 안쓰려고 노션 api를 사용하기 시작햇는데 오히려 일이 뭔가 더 많아진 느낌이다 … ",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "b090d64e-57f5-4a05-9b87-09d0d07bc6a9",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:07:00.000Z",
+            "last_edited_time": "2023-12-08T07:07:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "7ac6a10c-6173-44c0-9ca7-02201b100352",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:07:00.000Z",
+            "last_edited_time": "2023-12-08T07:08:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [
+                    {
+                        "type": "text",
+                        "text": {
+                            "content": "언제 완성할수있을까 ??",
+                            "link": null
+                        },
+                        "annotations": {
+                            "bold": false,
+                            "italic": false,
+                            "strikethrough": false,
+                            "underline": false,
+                            "code": false,
+                            "color": "default"
+                        },
+                        "plain_text": "언제 완성할수있을까 ??",
+                        "href": null
+                    }
+                ],
+                "color": "default"
+            }
+        },
+        {
+            "object": "block",
+            "id": "e184f1aa-edd1-48e8-9f63-762c6e26bd3e",
+            "parent": {
+                "type": "page_id",
+                "page_id": "5499a35c-6aa6-4bcf-a66e-51b5d4af4eca"
+            },
+            "created_time": "2023-12-08T07:08:00.000Z",
+            "last_edited_time": "2023-12-08T07:08:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "55a8066a-c73a-4baf-9e7e-a8dc76a224f3"
+            },
+            "has_children": false,
+            "archived": false,
+            "type": "paragraph",
+            "paragraph": {
+                "rich_text": [],
+                "color": "default"
+            }
+        }
+    ],
+    "next_cursor": null,
+    "has_more": false,
+    "type": "block",
+    "block": {},
+    "developer_survey": "https://notionup.typeform.com/to/bllBsoI4?utm_source=postman",
+    "request_id": "8ed6d371-840a-40e4-9b24-6d33f4866063"
+}

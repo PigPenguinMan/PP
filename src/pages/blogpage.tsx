@@ -4,13 +4,15 @@ import {
   NotionDbQuery,
   TestNotionBlcok,
   TestNotionDb,
+  TestText,
 } from "../lib/notion/api";
 import BlogCard from "../components/blog/card";
 import LoadingPage from "./loading";
 import BlogCardContent from "../components/blog/cardcontent";
-import { TBlogCardContent } from "../types/blog";
+import { IBlogCardContentProps, IBlogCardProps, TBlogCardContent } from "../types/blog";
 import testblock from "../util/testblockData.json";
 import { useSuspenseQueries } from "@tanstack/react-query";
+import { FetchBlogData, FetchClickedData } from "../lib/firebase/data/blogcontent";
 const BlogPage = () => {
   /**
    * 12/03 불러오는 data property https://developers.notion.com/reference/property-object
@@ -23,18 +25,15 @@ const BlogPage = () => {
   /**
    * 12/09 useQuerise => useSuspenseQueries로 변경
    */
-  const [dbData, blockData] = useSuspenseQueries({
+  const [dbData] = useSuspenseQueries({
     queries: [
-      { queryKey: [1], queryFn: TestNotionDb },
-      /**
-       * 12/09 블록데이터는 카드를 클릭햇을때 그 카드의 내용물이기 때문에 위의 데이터패치가 끝나고 실행되야한다
-       * enabled 옵션으로 종속쿼리로 만듬
-       */
-      { queryKey: [2], queryFn: TestNotionBlcok },
+      { queryKey: [1], queryFn: FetchBlogData },
+
+     
     ],
   });
 
-  const [contentData, setContentData] = useState<TBlogCardContent>();
+  const [clickedCardData, setClickedCardData] = useState<IBlogCardContentProps|null>(null);
   const [cardId, setCardId] = useState<string>();
   /**
    * 12/05 클릭한 카드의 ref를 얻어야하기때문에 ref를 props로 주고 다른걸 클릭하면 초기화
@@ -53,9 +52,13 @@ const BlogPage = () => {
    * 12/03 카드클릭시 해당 카드의 id값의 페이지 불러오기 ? 아니면 처음부터 페이지를 다불러오기 ?
    */
   const handleCardClick = (e: React.MouseEvent<HTMLElement>) => {
-    setCardId(e.currentTarget.id);
-    setIsCardOpen(!isCardOpen);
-
+    // setClickedCardData()
+    setCardId(e.currentTarget.id)
+    setIsCardOpen(!isCardOpen)
+  
+    
+    console.log(e.currentTarget);
+    
   };
 
   /**
@@ -76,12 +79,7 @@ const BlogPage = () => {
    * NotionAPI 자체에서 타이틀부분이 아닌 전체내용을 부르려면 id값으로 한번 더 패치받아야한다 차후 수정필요
    */
   useEffect(() => {
-    const updateData = async () => {
-      const cData = dbData.data.find(item => item.id == cardId);
-      return cData
-    };
-    updateData().then((result)=> setContentData(result));
-    
+   
   }, [cardId]);
   /**
    * 12/02 블로그 글이 카드형식으로 이미지 제목 순으로 나오고 제일 밑에 날짜 표시
@@ -91,28 +89,27 @@ const BlogPage = () => {
    * 페이지네이션 6개씩 ? | 스크롤시 다음 페이지불러오기
    */
 
- 
+
   return (
     <div className="blog_wrap">
       <h1 className="blog_title">블로그</h1>
       <div className="blog_contents">
         {/* 12/03 Suspense로 데이터 로딩처리 */}
-        {!dbData.isLoading && dbData.data
-          ? dbData.data.map((item, index) => (
-              <BlogCard
-                key={item.id}
-                {...item}
-                onClick={handleCardClick}
-                ref={(card) => {
-                  cardRef.current[index] = card;
-                }}
-              />
-            ))
-          : "로딩중"}
+        {!dbData.isLoading && dbData.data.map((item,index)=>(
+          <BlogCard 
+          key={index} 
+          {...item}
+
+          onClick={handleCardClick}
+          ref={(card)=> {
+            cardRef.current[index] = card ; 
+          }}
+          />
+        ))}
       </div>
-      {contentData && ( 
+      {clickedCardData&& ( 
         <Suspense fallback={<LoadingPage/>}>
-          <BlogCardContent page_id={cardId} contentdata={contentData} ref={cardPageRef} />
+          <BlogCardContent {...clickedCardData} ref={cardPageRef} />
 
         </Suspense>
       )}
