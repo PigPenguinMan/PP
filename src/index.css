@@ -12,6 +12,8 @@
     --text-color-light : #C6C6C6 ;
     --text-color-dark : #525252 ;
     --section-bgcolor : #fff;
+    --shadow-color : #00000026;
+    --button-hover-bgcolor : #ffffffbc ;
 
     /*  --TRANSISTION-  */
     --tran-02 : all 0.2s ease ;

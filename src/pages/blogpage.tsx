@@ -1,18 +1,13 @@
 import "../styles/blogpage.css";
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import {
-  NotionDbQuery,
-  TestNotionBlcok,
-  TestNotionDb,
-  TestText,
-} from "../lib/notion/api";
 import BlogCard from "../components/blog/card";
 import LoadingPage from "./loading";
 import BlogCardContent from "../components/blog/cardcontent";
-import { IBlogCardContentProps, IBlogCardProps, TBlogCardContent } from "../types/blog";
+import { IBlogCardContentProps, IBlogCardProps, ITag, TBlogCardContent } from "../types/blog";
 import testblock from "../util/testblockData.json";
 import { useSuspenseQueries } from "@tanstack/react-query";
 import { FetchBlogData, FetchClickedData } from "../lib/firebase/data/blogcontent";
+import { GetTags } from "../lib/firebase/data/blogtags";
 const BlogPage = () => {
   /**
    * 12/03 불러오는 data property https://developers.notion.com/reference/property-object
@@ -21,20 +16,20 @@ const BlogPage = () => {
    */
 
   const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
-
+  const [cardId, setCardId] = useState<string>();
   /**
    * 12/09 useQuerise => useSuspenseQueries로 변경
    */
   const [dbData] = useSuspenseQueries({
     queries: [
       { queryKey: [1], queryFn: FetchBlogData },
-
+    
      
     ],
   });
 
-  const [clickedCardData, setClickedCardData] = useState<IBlogCardContentProps|null>(null);
-  const [cardId, setCardId] = useState<string>();
+  const [clickedCardData, setClickedCardData] = useState<IBlogCardContentProps|undefined>();
+  const [tags , setTags] = useState<ITag[] | undefined>();
   /**
    * 12/05 클릭한 카드의 ref를 얻어야하기때문에 ref를 props로 주고 다른걸 클릭하면 초기화
    */
@@ -52,13 +47,8 @@ const BlogPage = () => {
    * 12/03 카드클릭시 해당 카드의 id값의 페이지 불러오기 ? 아니면 처음부터 페이지를 다불러오기 ?
    */
   const handleCardClick = (e: React.MouseEvent<HTMLElement>) => {
-    // setClickedCardData()
     setCardId(e.currentTarget.id)
-    setIsCardOpen(!isCardOpen)
-  
-    
-    console.log(e.currentTarget);
-    
+    setIsCardOpen(true)
   };
 
   /**
@@ -79,7 +69,13 @@ const BlogPage = () => {
    * NotionAPI 자체에서 타이틀부분이 아닌 전체내용을 부르려면 id값으로 한번 더 패치받아야한다 차후 수정필요
    */
   useEffect(() => {
-   
+    const updateData = ()=>{
+      const cData = dbData.data.find(item => cardId === item.Id )
+      setClickedCardData(cData)
+    }
+
+    updateData()
+    
   }, [cardId]);
   /**
    * 12/02 블로그 글이 카드형식으로 이미지 제목 순으로 나오고 제일 밑에 날짜 표시
@@ -88,6 +84,14 @@ const BlogPage = () => {
    * 한줄에 데스크탑에서는 3개 태블릿은 2개 모바일은 1개씩 표시
    * 페이지네이션 6개씩 ? | 스크롤시 다음 페이지불러오기
    */
+
+useEffect(()=>{
+  console.log(dbData.data);
+
+  
+  
+},[])
+
 
 
   return (
@@ -109,7 +113,7 @@ const BlogPage = () => {
       </div>
       {clickedCardData&& ( 
         <Suspense fallback={<LoadingPage/>}>
-          <BlogCardContent {...clickedCardData} ref={cardPageRef} />
+          <BlogCardContent {...clickedCardData} setIsCardOpen={setIsCardOpen} ref={cardPageRef} />
 
         </Suspense>
       )}

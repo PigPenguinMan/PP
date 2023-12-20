@@ -4,6 +4,26 @@
     align-items: center;
 }
 
+.icon {
+    display: flex;
+}
+
+.tag { 
+    position: absolute;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+
+.tag > .text {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-color-dark);
+}
 /* .blog_wrap .text {
     color: var(--text-color);
     font-size: 16px;
@@ -27,6 +47,7 @@
 /* 블로그페이지에 표시되는 카드 CSS */
 .blog_card {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -110,28 +131,40 @@
 }
 
 .blog_innercontent > .content_wrap {
-    position: absolute;
     display: flex;
     width: 100%;
     height: 100%;
     flex-direction: column; 
+    gap: 3px;
 }
 
-.content_wrap > div {
+.content_header{
     display: flex;
     width: 100%;
-}
-
-.content_wrap > .content_header { 
-    border: 1px solid black;
     height: 5%;
-
+    border-bottom: 1px solid dimgray;
+    align-items: center;
 }
+
+
+.content_header > i { 
+    width: 25px;
+    height: 25px;
+    transition: var(--tran-02);
+    border-radius: 3px;
+    
+}
+
+.content_header > i:hover {
+    box-shadow: 1px 1px 5px var(--shadow-color);
+}
+
 
 .content_wrap > .content_article { 
+    display: flex;
     flex-direction: column;
-    height: 95%;
-    border: 1px solid dimgray;
+    height: 90%;
+
 }
 
 
@@ -140,25 +173,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 1px solid black;
+    position: relative;
+    justify-content: space-between;
     padding: 5px 0;
+    border-bottom: 1px solid dimgray;
+
 }
 
-.titlewrap > .tag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    padding: 2px 3px;
-    border-radius: 5px;
-}
+
 
 
 .titlewrap > .title {
-    
+    height: 5%;
 }
 .titlewrap > .info { 
     display: flex;
+
     gap: 15px;
 }
 
@@ -182,6 +212,9 @@
     flex-direction: column;
     height: 100%;
     padding: 10px 15px;
+    border-bottom: 1px solid dimgray;
+
+
 }
 
 
@@ -200,6 +233,20 @@
 .maintext .text {
     font-size: 16px;
     font-weight: 350;
+}
+
+
+.content_footer { 
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    height: 5%;
+}
+.content_footer i {
+    width: 25px;
+    height: 25px;
+    transition: var(--tran-02);
+    border-radius: 3px;
 }
 
 @media all and (max-width : 768px) {

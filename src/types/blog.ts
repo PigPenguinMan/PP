@@ -78,6 +78,11 @@ type TReply = {
   User_Name : string ; 
 }
 
+export interface ITag  {
+  Tag_Id : string ;
+  Tag_Title : string ; 
+}
+
 export interface IBlogCardProps {
   Id : string; 
   Created_At : TTimeStamp ;
@@ -85,11 +90,13 @@ export interface IBlogCardProps {
   Title : string ;
   MainText: string ;
   Reply? :TReply[]; 
-  Tag ? : string;
+  Tag  : string;
   onClick: (event: React.MouseEvent<HTMLElement>) => void;
-
   ref?: RefObject<HTMLElement>;
+
 }
+
+
 
 export interface IBlogCardContentProps {
   Id : string; 
@@ -98,7 +105,8 @@ export interface IBlogCardContentProps {
   Title : string ;
   MainText: string ;
   Reply? :TReply[]; 
-  Tag ? : string;
+  Tag  : string;
+  setIsCardOpen : React.Dispatch<SetStateAction<boolean>>;
   ref?: RefObject<HTMLElement>;
 
 }
@@ -123,45 +131,6 @@ export type TBlogCardContent = {
   url: string;
 };
 
-// export interface IBlogCardContentProps {
-//   page_id?: string;
-//   contentdata?: TBlogCardContent;
-//   ref?: RefObject<HTMLDivElement>;
-// }
-
-// type TObjectType = {
-//   bookmark?: string;
-//   breadcrumb?: string;
-//   bulleted_list_item?: string;
-//   callout?: string;
-//   child_database?: string;
-//   child_page?: string;
-//   column?: string;
-//   column_list?: string;
-//   divider?: string;
-//   embed?: string;
-//   equation?: string;
-//   file?: string;
-//   heading_1?: string;
-//   heading_2?: string;
-//   heading_3?: string;
-//   image?: string;
-//   link_preview?: string;
-//   link_to_page?: string;
-//   numbered_list_item?: string;
-//   paragraph?: string;
-//   pdf?: string;
-//   quote?: string;
-//   synced_block?: string;
-//   table?: string;
-//   table_of_contents?: string;
-//   table_row?: string;
-//   template?: string;
-//   to_do?: string;
-//   toggle?: string;
-//   unsupported?: string;
-//   video?: string;
-// };
 
 /**
  * 12/09 오브젝트 타입에 따라 값이 변하기에 extends로 타입 확장 시켜야할거같다
